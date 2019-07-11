@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Espece</title>
+
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+<div th:each="e : ${listEspece}" class="col-md-4 my-1">
+    <form class="contact-form" role="form" th:action="@{|/espece/update/${e.id}|}" method="POST">
+
+        <input type="text" name="nom"  class="form-control"
+         th:Value= "${e.nom}">
+        <input type="text" name="Description"  class="form-control"
+               th:Value= "${e.Description}">
+
+        <button type="submit" class="btn btn-large">Modifier</button>
+    </form>
+
+</div>
+</body>
