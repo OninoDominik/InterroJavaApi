@@ -34,7 +34,34 @@ public class PoissonController {
         model.addAttribute("listEspece", listEspece);
         return "AfficheEspece";
     }
-    
+    @GetMapping(value= "/formAjout")
+    public String formAjoutPoisson( Model model){
+
+        List<Espece>listespece = especeDao.findAll();
+        model.addAttribute("listespece", listespece);
+        return "AjoutPoisson";
+    }
+
+    @PostMapping(path = "/add")
+    public @ResponseBody
+    String AddPoisson(@RequestParam String nom,
+                                @RequestParam String image,@RequestParam int especeId , Model model){
+        Espece espece = especeDao.findById(especeId);
+        Poisson poisson =new Poisson(nom,espece,image);
+        poisson.setNom(nom);
+        poisson.setImg(image);
+        poisson.setEspece(espece);
+        poissonDao.save(poisson);
+        return "Saved";
+    }
+    @GetMapping(value= "/delete/{id}")
+    public @ResponseBody
+    String supprimerPoisson(@PathVariable int id, Model model){
+        Poisson poisson = poissonDao.findById(id);
+        poissonDao.delete(poisson);
+        return "Poisson detruit";
+    }
+
 
 
 }

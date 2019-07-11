@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Poisson</title>
+
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+
+</head>
+<body>
+<form class="contact-form" role="form" action="/poisson/add" method="POST">
+
+    <input type="text" name="nom"  class="form-control"
+           Value= "}">
+    <input type="text" name="image"  class="form-control"
+           Value= "">
+
+    <select name="especeId" style="width: 250px; height: 43px;">
+        <div th:each="es : ${listespece}"  >
+            <option th:value="@{|${es.id}|}" ><h1 th:inline="text" >
+                [[${es.nom}]]
+            </h1>
+            </option></div>
+    </select>
+
+    <button type="submit" class="btn btn-large">Modifier</button>
+</form>
+</body>
+</html>

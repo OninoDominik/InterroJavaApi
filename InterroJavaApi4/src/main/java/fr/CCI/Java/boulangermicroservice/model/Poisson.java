@@ -26,6 +26,12 @@ public class Poisson {
         this.img = img;
     }
 
+    public Poisson(String nom, Espece espece, String img) {
+        this.nom = nom;
+        this.espece = espece;
+        this.img = img;
+    }
+
     public int getId() {
         return id;
     }
