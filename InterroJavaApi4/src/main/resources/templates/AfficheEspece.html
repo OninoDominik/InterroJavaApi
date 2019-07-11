@@ -16,6 +16,7 @@
                th:Value= "${e.Description}">
 
         <button type="submit" class="btn btn-large">Modifier</button>
+        <a th:href="@{|/espece/poisson/${e.id}|}" > Voir les poissons de cette espece </a>
     </form>
 
 </div>
