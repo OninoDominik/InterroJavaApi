@@ -10,9 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import fr.CCI.Java.boulangermicroservice.dao.ProduitDAO;
-import fr.CCI.Java.boulangermicroservice.model.Produit;
-
 @Controller
 @RequestMapping(path = "/poisson")
 public class PoissonController {

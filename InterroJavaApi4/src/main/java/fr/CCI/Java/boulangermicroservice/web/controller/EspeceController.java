@@ -10,9 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import fr.CCI.Java.boulangermicroservice.dao.ProduitDAO;
-import fr.CCI.Java.boulangermicroservice.model.Produit;
-
 @Controller
 @RequestMapping(path = "/espece")
 public class EspeceController {
@@ -20,6 +17,14 @@ public class EspeceController {
     private EspeceDao especeDao;
     @Autowired
     private PoissonDao poissonDao;
+
+    @GetMapping(value= "/debut")
+    public String debut( Model model){
+
+        return "Accueil";
+    }
+
+
 
     @GetMapping(value= "/all")
     public String listeDesEspeces( Model model){

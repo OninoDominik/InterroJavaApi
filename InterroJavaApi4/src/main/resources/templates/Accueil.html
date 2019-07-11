@@ -9,24 +9,13 @@
 <body>
 
 
-<div class="container">
+    <h1>Ocean</h1>
 
-    <h1>Application Boulangerie</h1>
-    
-    
+    <a th:href="@{|/espece/all|}" > Voir toutes les espece modifier une espece (a partir de la vous pourrez allez modifier un poisson)</a><br/>
+    <a href="http://localhost:9900/poisson/formAjout" > formulaire pour ajouter un poisson</a><br/>
+    supprimer un poisson pour cela il vous faut une id mais cela est disponible a l'url suivante : poisson/delete/{id}<br/>
 
-    
-    
-    <div class="row">
-    	<div th:each="product : ${ps}" class="col-md-4 my-1">
-    		 <a th:href="@{|/produit-detail/${product.id}|}" >    	
-                <img th:src="${product.img}"  class="card-img-top" />
-                <p th:text= "${product.nom}"></p>
-             </a>
-        </div>
-    </div>
 
-</div>
 
 
 <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>

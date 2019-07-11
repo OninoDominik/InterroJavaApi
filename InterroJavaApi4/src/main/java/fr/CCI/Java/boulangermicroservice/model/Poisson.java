@@ -4,11 +4,11 @@ import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
-@SequenceGenerator(name="seq", initialValue=10, allocationSize=100)
+@SequenceGenerator(name="seq3", initialValue=1000, allocationSize=100)
 public class Poisson {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq3")
     private int id;
     @Column(unique=true)
     private String nom;
