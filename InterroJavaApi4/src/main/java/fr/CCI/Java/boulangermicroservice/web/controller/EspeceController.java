@@ -57,9 +57,6 @@ public class EspeceController {
         model.addAttribute("listEspece", listEspece);
         return "AfficheEspece";
     }
-    @GetMapping(value= "/{id}")
-    public Espece especeParID(@PathVariable int id, Model model) {
-        return especeDao.findById(id);
-    }
+
 }
 
